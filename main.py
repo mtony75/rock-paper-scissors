@@ -2,6 +2,8 @@
 # Accept a selection of rock, paper, scissors
 # from a user then randomly select the same 
 # choices and choose who wins.
+#import random library
+import random
 
 def validChoice(choice):
 	if (int(choice) < 1) | (int(choice) > 3):
@@ -15,8 +17,19 @@ def playAgain(game):
 	else:
 		return False
 
-#import random library
-import random
+def getChoice():
+	randomChoice=random.choice(['rock', 'paper', 'scisors'])
+	return randomChoice
+	
+def rockVs(choice):
+	pass
+	
+def paperVs(choice):
+	pass
+	
+def scissorsVs(choice):
+	pass
+		
 print('Lets Play \'Rock\' \'Paper\' \'Scissors\'')
 
 # run controls the loop for game play. 1= go 0 = stop
@@ -30,6 +43,10 @@ while (run != 0):
 	usrChoice = input('Enter your choice: ')
 	if validChoice(usrChoice):
 		print('Choice is valid')
+		cpuChoice = getChoice()
+		if (usrChoice == 'rock'):
+			
+		
 	else:
 		print('Choice not valid')
 	print('Play another game?')
@@ -40,5 +57,6 @@ while (run != 0):
 		run = 1
 	else:
 		run = 0
+		
 		
 
