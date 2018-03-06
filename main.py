@@ -45,7 +45,11 @@ while (run != 0):
 		print('Choice is valid')
 		cpuChoice = getChoice()
 		if (usrChoice == 'rock'):
-			
+			gameOutcome = rockVs(cpuChoice)
+		elif (usrChoice == 'paper'):
+			gameOutcome = paperVs(cpuChoice)
+		else:
+			gameOutcome = scissorsVs(cpuChoice)
 		
 	else:
 		print('Choice not valid')
