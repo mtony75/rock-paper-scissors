@@ -22,13 +22,36 @@ def getChoice():
 	return randomChoice
 	
 def rockVs(choice):
-	pass
+	if (choice == 'rock'):
+		return 'tie'
+	elif (choice =='paper'):
+		return 'loose'
+	else:
+		return 'win'
 	
 def paperVs(choice):
-	pass
+	if (choice == 'rock'):
+		return 'win'
+	elif (choice == 'paper'):
+		return 'tie'
+	else:
+		return 'loose'
 	
 def scissorsVs(choice):
-	pass
+	if (choice == 'rock'):
+		return 'loose'
+	elif (choice == 'paper'):
+		return 'win'
+	else:
+		return 'tie'
+
+def convertChoice(choice):
+	if (int(choice) == 1):
+		return 'rock'
+	elif (int(choice) == 2):
+		return 'paper'
+	else:
+		return 'scissors'
 		
 print('Lets Play \'Rock\' \'Paper\' \'Scissors\'')
 
@@ -40,8 +63,9 @@ while (run != 0):
 	print('1. Rock')
 	print('2. Paper')
 	print('3. Scissors')
-	usrChoice = input('Enter your choice: ')
-	if validChoice(usrChoice):
+	inputChoice = input('Enter your choice: ')
+	if validChoice(inputChoice):
+		usrChoice = convertChoice(inputChoice)
 		print('Choice is valid')
 		cpuChoice = getChoice()
 		if (usrChoice == 'rock'):
@@ -50,7 +74,7 @@ while (run != 0):
 			gameOutcome = paperVs(cpuChoice)
 		else:
 			gameOutcome = scissorsVs(cpuChoice)
-		
+		print('Player choose {}, the computer choose {}, so the player {}'.format(usrChoice,cpuChoice,gameOutcome))
 	else:
 		print('Choice not valid')
 	print('Play another game?')
